@@ -1,0 +1,110 @@
+<!DOCTYPE html >
+<html>
+<title>
+Calculater 
+</title>
+<head>
+</head>
+<style>
+				*{
+								margin:none;
+								box-sizing:border-box ;
+								padding:none;
+				}
+				div,#form{
+				display :flex;
+				justify-content :center;
+				align-items:center ;
+				flex-direction :column;
+				background:#40a1ff;
+				padding:30px;
+				box-shadow :0 5px 10px #727269;
+				border-radius:10px;
+				} 
+				input{
+								width:80%;
+								margin:10px;
+								height:30px;
+								background:#ffb200;
+								color:#000000;
+								border-radius:30px;
+								padding:20px;
+								font-weight:bolder;
+								font-size:20px;
+								outline:none;
+								box-shadow :0px 5px 10px #464646;
+								border:none;
+				}
+				input::-webkit-input-placeholder{
+								color:#ff555f;
+				}
+				label,label1,label2{
+				padding :10px ;
+				font-size :13px ;
+				background:#ffb200;
+								color:#3a3a3a;
+								border-radius:30px;
+								font-weight:bolder;
+					} 
+				sec{
+				width:300px;
+				height:50px;
+				box-shadow :0px 5px 10px #464646;
+				margin:10px;
+				background:#ff8955;
+								color:#000000;
+								border-radius:30px;
+								font-weight:bolder;
+								display:flex;
+								justify-content :center ;
+								align-items:center ;
+				}
+				total,less,h4{
+				font-size :12pt;
+				}
+@media(max-width:768px){
+				label,label1,label2{
+				width:50px;
+				height:25px;
+				font-size:13px;
+				padding:5px;}
+				sec{font-size:10px;
+				padding:5px;}
+}
+</style>
+<body>
+				<div>
+								<form id="form">
+								<input type="number" id="num1" placeholder="Enter Number... " value="">
+								<input type="number" id="num2" placeholder="Enter Percentage.... " value="">
+								</form>
+								<sec><h4>Percentage:</h4> 
+												<label id="label">AMT</label>
+								</sec>
+								<sec>
+												<total>Total Amt:   
+																<label1 id="label1">Total</label1>
+												</total>
+												<less>Subtracted Amt:   
+																<label2 id="label2">subs</label2>
+												</less>
+								</sec>
+				</div>
+<script>
+				
+								
+							var form=document.getElementById("form");	
+							form.oninput=(e)=>{
+											if(e.target!==e.currentTarget){
+											var num1=document.getElementById("num1").value;
+											var num2=document.getElementById("num2").value;
+											var percentage=(num1*num2)/100;
+											document.getElementById("label").innerText=percentage;
+											document.getElementById("label1").innerText=num1-(-percentage);
+											document.getElementById("label2").innerText=num1-percentage;
+											
+											}
+							}
+</script>
+</body>
+</html>
